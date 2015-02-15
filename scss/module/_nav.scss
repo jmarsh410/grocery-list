@@ -1,0 +1,17 @@
+.nav.nav-tabs {
+	border-color: darken($blue, 10%);
+	width: 500px;
+	margin: 0 auto 30px;
+	li {
+		a {
+			background: transparent;
+			color: darken($blue, 30%);
+		}
+		&:hover a, 
+		&.active a {
+			border-color: darken($blue, 10%);
+			background: lighten($blue, 10%);
+			color: $white;
+		}
+	}
+}

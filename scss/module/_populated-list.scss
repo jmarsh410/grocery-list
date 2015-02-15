@@ -1,0 +1,35 @@
+.list-container {
+	position: fixed;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background: $dgray;
+	overflow-y: scroll;
+	@include respond-to(sm-and-down) {
+		position: relative;
+	}
+}
+.populated-list {
+	color: $white;
+	text-align: left;
+	h3 {
+		text-transform: uppercase;
+	}
+	ul {
+		padding: 0;
+		li {
+			padding: 10px;
+			.name {
+				padding:2px 0;
+				display: inline-block;
+			}
+			&:nth-child(2n-1) {
+				background: $gray;
+			}
+			.remove {
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+	}
+}

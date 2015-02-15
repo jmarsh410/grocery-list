@@ -1,0 +1,53 @@
+//  respond-to styles
+@mixin respond-to($viewport-size) {
+  @if $viewport-size == xs {
+    @media only screen and (max-width: $screen-xs-max) {
+      @content;
+    }
+  }
+  @else if ($viewport-size == sm) {
+    @media only screen and (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
+      @content;
+    }
+  }
+  @else if ($viewport-size == sm-and-up) {
+    @media only screen and (min-width: $screen-sm-min) {
+      @content;
+    }
+  }
+  @else if ($viewport-size == sm-and-down) {
+    @media only screen and (max-width: $screen-sm-max) {
+      @content;
+    }
+  }
+  @else if ($viewport-size == md) {
+    @media only screen and (min-width: $screen-md-min) and (max-width: $screen-md-max) {
+      @content;
+    }
+  }
+  @else if ($viewport-size == md-and-up) {
+    @media only screen and (min-width: $screen-md-min) {
+      @content;
+    }
+  }
+  @else if ($viewport-size == lg) {
+    @media only screen and (min-width: $screen-lg-min) {
+      @content;
+    }
+  }
+}
+
+// style placholders
+@mixin placeholder($color: #000, $style: normal, $weight: normal) {
+  &::-webkit-input-placeholder { color: $color; font-style: $style; font-weight: $weight; }
+  &:-moz-placeholder           { color: $color; font-style: $style; font-weight: $weight; } /* Firefox 18- */
+  &::-moz-placeholder          { color: $color; font-style: $style; font-weight: $weight; } /* Firefox 19+ */
+  &:-ms-input-placeholder      { color: $color; font-style: $style; font-weight: $weight; }
+}
+
+@mixin placeholderFocus($color: #ccc, $style: normal, $weight: normal) {
+  &:focus::-webkit-input-placeholder { color: $color; font-style: $style; font-weight: $weight; }
+  &:focus:-moz-placeholder           { color: $color; font-style: $style; font-weight: $weight; } /* Firefox 18- */
+  &:focus::-moz-placeholder          { color: $color; font-style: $style; font-weight: $weight; } /* Firefox 19+ */
+  &:focus:-ms-input-placeholder      { color: $color; font-style: $style; font-weight: $weight; }
+}

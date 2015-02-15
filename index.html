@@ -1,0 +1,82 @@
+<!doctype html>
+<html ng-app="groceryList">
+<head>
+	<title>Grocery List App</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/styles.css">
+	<!-- GOOGLE FONTS -->
+	<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+</head>
+<body>
+	<main>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-xs-12 col-md-8">
+					<div ng-controller="GroceryForm as grocForm">
+						<h2>Grocery Time!</h2>
+						<ul class="nav nav-tabs">
+							<li ng-class="{active:grocForm.isSelected(1)}">
+								<a href ng-click="grocForm.setTab(1)">Single Items</a>
+							</li>
+							<li ng-class="{active:grocForm.isSelected(2)}">
+								<a href ng-click="grocForm.setTab(2)">Meals</a>
+							</li>
+						</ul>
+						<div class="single-item" ng-show="grocForm.isSelected(1)">
+							<form name="Single Item" ng-submit="grocForm.addItem()" >
+								<input class="single-item__name" ng-model="grocForm.item.name" type="text" name="Grocery Item" placeholder="Grocery Item">
+								<button class="single-item__submit btn-primary btn-submit" type="submit">+</button>
+							</form>
+						</div>
+						<div class="meals" ng-show="grocForm.isSelected(2)">
+							<div class="meals__forms">
+								<form class="meal-name" name="" ng-submit="grocForm.addMeal()">
+									<input class="meal-name__name" type="text" name="Meal Name" placeholder="Name of meal..." ng-model="grocForm.meal.name" />
+									<ul class="meal-name__ingredients">
+										<li ng-repeat="ingredient in grocForm.meal.ingredients">
+											{{ingredient.name}}
+											<button class="btn-primary pull-right" ng-click="grocForm.removeIngr(ingredient)">-</button>
+										</li>
+									</ul>
+									<button class="meal-name__submit" type="submit">Add Meal</button>
+								</form>
+								<form class="meal-ingredient" name="Add Ingredient" ng-submit="grocForm.addIngr()">
+									<input class="meal-ingredient__name" type="text" name="Ingredient Name" placeholder="Ingredient Name" ng-model="grocForm.ingredient.name" />
+									<button class="btn-primary btn-submit" type="submit">+</button>
+								</form>
+							</div>
+							<div class="meals__list">
+								<h4>Recent Meals</h4>
+								<ul>
+									<li ng-repeat="meal in grocForm.meals">
+										<span class="name">{{meal.name}}</span>
+										<button class="btn-primary" ng-click="grocForm.addMealToList(meal)">+</button>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="list-container col-xs-12 col-md-4">
+					<aside class="populated-list" ng-controller="ListController as list">
+						<h3>List</h3>
+						<ul>
+							<li ng-repeat="product in list.products">
+								<span class="name">{{product.name}}</span>
+								<button class="remove btn-primary pull-right" ng-click="list.removeProduct(product)">Remove</button>
+							</li>
+						</ul>
+					</aside>
+				</div>
+			</div>
+		</div>
+	</main>
+	
+	<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.13/angular.min.js"></script>
+	<script type="text/javascript" src="js/grocery.js"></script>
+</body>
+</html>

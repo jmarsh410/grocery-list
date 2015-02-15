@@ -1,0 +1,85 @@
+.meals {
+	.meals__forms {
+		background: lighten($blue, 10%);
+		@include border-radius(5px);
+		padding: 20px;
+		margin: 0 auto 30px;
+		width: 600px;
+		display: inline-block;
+		position: relative;
+		.meal-name {
+			&__name {
+				font-size: 24px;
+				width: 100%;
+				padding: 5px 0;
+				border-bottom: 2px solid #333;
+				background: none;
+				color: $dgray;
+				margin-bottom: 10px;
+				font-weight: bold;
+				@include placeholder($dblue, normal, normal);
+				@include transition(all .3s ease); // multiple: comma-delimited
+				&:focus {
+					text-indent: 10px;
+				}
+			}
+			&__ingredients {
+				text-align: left;
+				position: relative;
+				li {
+					padding: 10px;
+					border-bottom: 1px solid $dblue;
+					position: relative;
+					margin: 5px 0;
+					// &:nth-child(2n-1) {
+					// 	background: $blue;
+					// }
+					&:last-child {
+						border-bottom: none;
+					}
+					button {
+						padding: 0 5px;
+					}
+				}
+			}
+			&__submit {
+				position: absolute;
+				left: 102%;
+				top: 0;
+				@include border-radius(5px);
+				background: $white;
+				@include box-shadow(none); // multiple: comma-delimited
+				border: none;
+				color: $blue;
+				font-size: 18px;
+				white-space: nowrap;
+				padding: 5px;
+			}
+		}
+		.meal-ingredient {
+			position: relative;
+			&__name {
+				width: 100%;
+				padding: 10px;
+				border: none;
+				box-shadow: none;
+				@include placeholder(#ccc, normal, normal);
+			}
+		}
+	}
+	.meals__list {
+		margin-bottom: 50px;
+		width: 600px;
+		padding: 20px;
+		background: lighten($blue, 10%);
+		display: inline-block;
+		position: relative;
+		@include border-radius(5px);
+		text-align: left;
+		ul {
+			li {
+				padding: 10px;
+			}
+		}
+	}
+}

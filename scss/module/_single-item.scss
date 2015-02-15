@@ -1,0 +1,17 @@
+.single-item {
+	width: 600px;
+	padding: 20px;
+	background: lighten($blue, 10%);
+	display: inline-block;
+	position: relative;
+	@include border-radius(5px);
+	form {
+		position: relative;
+	}
+	&__name {
+		width: 100%;
+		padding: 10px;
+	}	
+	&__submit {
+	}
+}

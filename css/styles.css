@@ -1,0 +1,212 @@
+body {
+  background: url(/images/restaurant.png) 50% 0 repeat; }
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0; }
+
+h2 {
+  margin-bottom: 30px;
+  margin-top: 100px;
+  font-family: "Lobster", cursive;
+  font-size: 100px; }
+
+h4 {
+  font-size: 24px; }
+
+input {
+  border: none;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none; }
+
+form .btn-submit {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 0 10px;
+  font-size: 20px;
+  -moz-border-radius: 0px;
+  -webkit-border-radius: 0px;
+  border-radius: 0px; }
+
+main {
+  text-align: center; }
+
+.list-container {
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #333333;
+  overflow-y: scroll; }
+  @media only screen and (max-width: 991px) {
+    .list-container {
+      position: relative; } }
+
+.populated-list {
+  color: #fff;
+  text-align: left; }
+  .populated-list h3 {
+    text-transform: uppercase; }
+  .populated-list ul {
+    padding: 0; }
+    .populated-list ul li {
+      padding: 10px; }
+      .populated-list ul li .name {
+        padding: 2px 0;
+        display: inline-block; }
+      .populated-list ul li:nth-child(2n-1) {
+        background: #4d4d4d; }
+      .populated-list ul li .remove {
+        display: inline-block;
+        vertical-align: middle; }
+
+.meals .meals__forms {
+  background: #a8d8d6;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 0 auto 30px;
+  width: 600px;
+  display: inline-block;
+  position: relative; }
+  .meals .meals__forms .meal-name__name {
+    font-size: 24px;
+    width: 100%;
+    padding: 5px 0;
+    border-bottom: 2px solid #333;
+    background: none;
+    color: #333333;
+    margin-bottom: 10px;
+    font-weight: bold;
+    /* Firefox 18- */
+    /* Firefox 19+ */
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    .meals .meals__forms .meal-name__name::-webkit-input-placeholder {
+      color: #62b8b4;
+      font-style: normal;
+      font-weight: normal; }
+    .meals .meals__forms .meal-name__name:-moz-placeholder {
+      color: #62b8b4;
+      font-style: normal;
+      font-weight: normal; }
+    .meals .meals__forms .meal-name__name::-moz-placeholder {
+      color: #62b8b4;
+      font-style: normal;
+      font-weight: normal; }
+    .meals .meals__forms .meal-name__name:-ms-input-placeholder {
+      color: #62b8b4;
+      font-style: normal;
+      font-weight: normal; }
+    .meals .meals__forms .meal-name__name:focus {
+      text-indent: 10px; }
+  .meals .meals__forms .meal-name__ingredients {
+    text-align: left;
+    position: relative; }
+    .meals .meals__forms .meal-name__ingredients li {
+      padding: 10px;
+      border-bottom: 1px solid #62b8b4;
+      position: relative;
+      margin: 5px 0; }
+      .meals .meals__forms .meal-name__ingredients li:last-child {
+        border-bottom: none; }
+      .meals .meals__forms .meal-name__ingredients li button {
+        padding: 0 5px; }
+  .meals .meals__forms .meal-name__submit {
+    position: absolute;
+    left: 102%;
+    top: 0;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: #fff;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    color: #85C8C5;
+    font-size: 18px;
+    white-space: nowrap;
+    padding: 5px; }
+  .meals .meals__forms .meal-ingredient {
+    position: relative; }
+    .meals .meals__forms .meal-ingredient__name {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      box-shadow: none;
+      /* Firefox 18- */
+      /* Firefox 19+ */ }
+      .meals .meals__forms .meal-ingredient__name::-webkit-input-placeholder {
+        color: #ccc;
+        font-style: normal;
+        font-weight: normal; }
+      .meals .meals__forms .meal-ingredient__name:-moz-placeholder {
+        color: #ccc;
+        font-style: normal;
+        font-weight: normal; }
+      .meals .meals__forms .meal-ingredient__name::-moz-placeholder {
+        color: #ccc;
+        font-style: normal;
+        font-weight: normal; }
+      .meals .meals__forms .meal-ingredient__name:-ms-input-placeholder {
+        color: #ccc;
+        font-style: normal;
+        font-weight: normal; }
+.meals .meals__list {
+  margin-bottom: 50px;
+  width: 600px;
+  padding: 20px;
+  background: #a8d8d6;
+  display: inline-block;
+  position: relative;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  text-align: left; }
+  .meals .meals__list ul li {
+    padding: 10px; }
+
+.nav.nav-tabs {
+  border-color: #62b8b4;
+  width: 500px;
+  margin: 0 auto 30px; }
+  .nav.nav-tabs li a {
+    background: transparent;
+    color: #387c79; }
+  .nav.nav-tabs li:hover a, .nav.nav-tabs li.active a {
+    border-color: #62b8b4;
+    background: #a8d8d6;
+    color: #fff; }
+
+.single-item {
+  width: 600px;
+  padding: 20px;
+  background: #a8d8d6;
+  display: inline-block;
+  position: relative;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+  .single-item form {
+    position: relative; }
+  .single-item__name {
+    width: 100%;
+    padding: 10px; }
+
+.btn-primary {
+  color: #fff;
+  background-color: #85C8C5;
+  border: none;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px; }
+  .btn-primary:hover {
+    background: #62b8b4; }
