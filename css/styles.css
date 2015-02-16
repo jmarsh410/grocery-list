@@ -19,7 +19,16 @@ input {
   border: none;
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
-  box-shadow: none; }
+  box-shadow: none;
+  outline: none; }
+  input:focus.ng-invalid {
+    -moz-box-shadow: inset 0px 0px 5px red;
+    -webkit-box-shadow: inset 0px 0px 5px red;
+    box-shadow: inset 0px 0px 5px red; }
+  input:focus.ng-valid {
+    -moz-box-shadow: inset 0px 0px 5px green;
+    -webkit-box-shadow: inset 0px 0px 5px green;
+    box-shadow: inset 0px 0px 5px green; }
 
 form .btn-submit {
   position: absolute;
@@ -72,7 +81,7 @@ main {
   padding: 20px;
   margin: 0 auto 30px;
   width: 600px;
-  display: inline-block;
+  display: block;
   position: relative; }
   .meals .meals__forms .meal-name__name {
     font-size: 24px;
@@ -141,7 +150,6 @@ main {
       width: 100%;
       padding: 10px;
       border: none;
-      box-shadow: none;
       /* Firefox 18- */
       /* Firefox 19+ */ }
       .meals .meals__forms .meal-ingredient__name::-webkit-input-placeholder {
@@ -161,11 +169,11 @@ main {
         font-style: normal;
         font-weight: normal; }
 .meals .meals__list {
-  margin-bottom: 50px;
+  margin: 0 auto 50px;
   width: 600px;
   padding: 20px;
   background: #a8d8d6;
-  display: inline-block;
+  display: block;
   position: relative;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;

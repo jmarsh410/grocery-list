@@ -23,6 +23,13 @@ h4 {
 input {
 	border: none;
 	@include box-shadow(none); // multiple: comma-delimited
+	outline: none;
+	&:focus.ng-invalid {
+		@include box-shadow(inset 0px 0px 5px red); // multiple: comma-delimited
+	}
+	&:focus.ng-valid {
+		@include box-shadow(inset 0px 0px 5px green); // multiple: comma-delimited
+	}
 }
 
 button {

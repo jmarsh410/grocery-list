@@ -81,6 +81,7 @@
 			meal.ingredients.forEach(function(ingredient){
 				items.push(ingredient);
 			});
+			return meal;
 		};
 
 		//THOUGHT - combine function for adding item and meal
