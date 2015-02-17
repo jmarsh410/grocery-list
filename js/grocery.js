@@ -52,7 +52,7 @@
 			this.item = {}; //resets item 
 		};
 
-		this.tab = 2;
+		this.tab = 1;
 		this.setTab = function(tabNumber){
 			this.tab = tabNumber;
 		};
@@ -99,11 +99,32 @@
 		};
 	});
 
-	app.controller('ListController', function(){
-		this.products = items;
-		this.removeProduct = function(product){
-			var pIndex = items.indexOf(product);
-			items.splice(pIndex, 1);
+	app.directive('singleItem', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'templates/single-item.html',
+		};
+	});
+
+	app.directive('meals', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'templates/meals.html'
+		};
+	});
+
+	app.directive('populatedList', function(){
+		return {
+			restrict: 'E',
+			templateUrl: 'templates/populated-list.html',
+			controller: function(){
+				this.products = items;
+				this.removeProduct = function(product){
+					var pIndex = items.indexOf(product);
+					items.splice(pIndex, 1);
+				};
+			},
+			controllerAs: 'list',
 		};
 	});
 })();

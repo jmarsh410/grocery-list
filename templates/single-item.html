@@ -1,0 +1,6 @@
+<div class="single-item" ng-show="grocForm.isSelected(1)">
+	<form name="singleItem" ng-submit="singleItem.$valid && grocForm.addItem()" novalidate>
+		<input class="single-item__name" ng-model="grocForm.item.name" type="text" name="Grocery Item" placeholder="Grocery Item" required>
+		<button class="single-item__submit btn-primary btn-submit" type="submit">+</button>
+	</form>
+</div>

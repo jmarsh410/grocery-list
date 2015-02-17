@@ -1,0 +1,27 @@
+<div class="meals" ng-show="grocForm.isSelected(2)">
+	<div class="meals__forms">
+		<form class="meal-name" name="mealName" ng-submit="mealName.$valid && grocForm.addMeal()" novalidate>
+			<input class="meal-name__name" type="text" name="Meal Name" placeholder="Name of meal..." ng-model="grocForm.meal.name" required/>
+			<ul class="meal-name__ingredients">
+				<li ng-repeat="ingredient in grocForm.meal.ingredients">
+					{{ingredient.name}}
+					<button class="btn-primary pull-right" ng-click="grocForm.removeIngr(ingredient)">-</button>
+				</li>
+			</ul>
+			<button class="meal-name__submit" type="submit">Add Meal</button>
+		</form>
+		<form class="meal-ingredient" name="addIngr" ng-submit="addIngr.$valid && grocForm.addIngr()" novalidate>
+			<input class="meal-ingredient__name" type="text" name="Ingredient Name" placeholder="Ingredient Name..." ng-model="grocForm.ingredient.name" required/>
+			<button class="btn-primary btn-submit" type="submit">+</button>
+		</form>
+	</div>
+	<div class="meals__list">
+		<h4>Recent Meals</h4>
+		<ul>
+			<li ng-repeat="meal in grocForm.meals">
+				<span class="name">{{meal.name}}</span>
+				<button class="btn-primary" ng-click="grocForm.addMealToList(meal)">+</button>
+			</li>
+		</ul>
+	</div>
+</div>
