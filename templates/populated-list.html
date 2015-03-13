@@ -2,7 +2,7 @@
 	<aside class="populated-list">
 		<h3>List</h3>
 		<ul>
-			<li ng-repeat="product in list.products">
+			<li ng-repeat="product in list.products track by $index">
 				<span class="name">{{product.name}}</span>
 				<button class="remove btn-primary pull-right" ng-click="list.removeProduct(product)">Remove</button>
 			</li>

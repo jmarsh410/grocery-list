@@ -1,0 +1,8 @@
+<div class="duplicates" ng-show="dup.onList.length > 0">
+	<span>These items already exist in your list:</span>
+	<ul>
+		<li ng-repeat="item in dup.onList">
+			{{item.name}}
+		</li>
+	</ul>
+</div>

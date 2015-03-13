@@ -18,7 +18,7 @@
 	<div class="meals__list">
 		<h4>Recent Meals</h4>
 		<ul>
-			<li ng-repeat="meal in grocForm.meals">
+			<li ng-repeat="meal in grocForm.meals track by $index">
 				<span class="name">{{meal.name}}</span>
 				<button class="btn-primary" ng-click="grocForm.addMealToList(meal)">+</button>
 			</li>
